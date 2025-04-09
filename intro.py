@@ -375,6 +375,11 @@ for key in myMap:
 # Searching the hashMap
 print((1,2) in myMap)
 
+# can use .get() to return a specified default value if the key is not yet in the hashMap instead of causing a Key Error
+myMap = {"first": 1}
+
+print(myMap.get("second", "second is not yet in table"))
+
 
 #! Heaps, are Lists under the hood, heapq just provides algorithms to operate on the List like a heap, heaps are minHeaps by default in python, heaps are not BST. They are like BST but they don't have an inherent order. In BST: left < root < right , but in Min Heaps: parent just has to be smaller than children. 
 
@@ -528,4 +533,6 @@ c = [1, 2]
 
 
 
+hashMap = {"a": 32}
 
+print("as" in hashMap)
