@@ -262,9 +262,38 @@ print(f"Value: {num_to_string}, Type = {type(num_to_string)}")
 # can get ASCII value of a character using ord
 print(ord("a"))
 
+
+# Remove leading/trailing spaces
+s = "    hello world     "
+new_s = s.strip()
+print(new_s)      
+
+# replace characters in a string
+s = "hello world"
+new_s = s.replace("l", "x")  
+print(new_s)   # ----> hexxo worxd
+
+# can seperate a string by a delimiter
+string = "ab.cd.ed.gh.ij"
+strings = string.split(".") 
+print(strings)
+
 # can join a list of strings with a delimiter
 strings = ["ab", "cd", "ef", "gh", "ij"]
 print(" delimiter ".join(strings))
+
+# can slice strings using this notation s[start:stop:step], returns a new string since strings are immutable, stop is not included like in for loops
+s = "asdas"
+s_new = s[0:2:1]
+print(s_new)
+
+# including the whole string
+s_new = s[::1]
+print(s_new)
+
+# reversing the string
+s_new = s[::-1]
+print(s_new)
 
 
 #Queues (double ended queue) , implemented using double linked list or circular buffer in python
@@ -321,6 +350,7 @@ print(mySet)
 # insert : average O(1)
 # remove: average O(1)
 # lookup: average O(1)
+# iterate over keys/ items() : O(n) (where n is the amount of data inserted into the Hash Map , not the size of the Hash Map itself)
 
 myMap = {}
 myMap["jimmy"] = 88
