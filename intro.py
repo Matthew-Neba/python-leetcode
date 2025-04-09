@@ -440,8 +440,9 @@ while arr:
 
 
 # Functions
-
-def myFunc (a,b):
+#  those int,float,bool on the myFunc function signature are type hints which don't affect how the program runs, they are mean for code clarity and to help IDE
+# properly handle the code
+def myFunc (a: int,b:float) -> bool:
     return a*b
 
 print(myFunc(1,2)) 
