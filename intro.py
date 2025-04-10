@@ -262,6 +262,8 @@ print(f"Value: {num_to_string}, Type = {type(num_to_string)}")
 # can get ASCII value of a character using ord
 print(ord("a"))
 
+# can get the char from integer/ascii value using chr
+print(chr(ord("a")))
 
 # Remove leading/trailing spaces
 s = "    hello world     "
@@ -388,6 +390,19 @@ for val in myMap.values():
 # loop for key and value at same time
 for key,val in myMap.items():
     print(f"Key: {key}, Value: {val}")
+
+# Can also use defaultdict to initialize empty values in a dictionary
+from collections import defaultdict
+
+list_defaultdict = defaultdict(list)
+
+list_defaultdict["hi"].append("hello") # ----> No error on append since the default element is a list
+
+# Can use .get() to also return default items on Hash Map lookups
+new_dict = {}
+default_value = new_dict.get("random key", 0)
+
+print(default_value)
 
 
 # Tuples are like arrays but are immutable

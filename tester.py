@@ -3,3 +3,4 @@ s = "asdas"
 s_new = s[::-1]
 print(s_new)
 
+print([s_new])
