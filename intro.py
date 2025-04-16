@@ -525,7 +525,6 @@ def outer():
         print(count)
 
     inner()
-    inner()
 
 outer()
 
