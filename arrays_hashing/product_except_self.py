@@ -20,7 +20,7 @@ class Solution:
         return final_products
 
         
-# more optimal
+# more optimal (Still O(n) in and O(n) in space, but smaller constant for the n)
 class Solution:
     def productExceptSelf(self, nums: List[int]) -> List[int]:
 

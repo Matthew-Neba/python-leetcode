@@ -9,7 +9,7 @@ class Solution:
         for num in nums:
             freq_dict[num] = 1 + freq_dict.get(num,0)
         
-        # time for bucket sort variation (Variation: no internal sorting in the buckets to O(n))
+        # time for bucket sort variation (Variation: no internal sorting in the buckets to yield an O(n) solution)
         num_buckets = len(nums) + 1
         bucket_arr = [[] for i in range(num_buckets)]
 
