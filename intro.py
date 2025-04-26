@@ -8,6 +8,34 @@
 
 #! Python naming conventions: lower_case_snake_case for varaible names, CAPITAL_SNAKECASE for constants, CapitalPascalCase for Classes
 
+# ! Since everything is an object in python, all variables are heap allocated unlike languages like C. The stack is used to track which funtions to call along with when and where to call those functions. Different from compiled languages like C. Due to this, declaring new variables inside something like a for loop just reasigns the pointer of the local variable from the previous iteration of the for loop, so the cost is neglible. Whereas in complied languages like C, new stack frame is allocated and dellocated on the stack for the local variable for each iteration of the for loop.
+
+# ! Stack in python is used to manage function frames. A function frame contains a dictionary or array of pointers to heap objects (NOT the objects themselves), (all variable's data is heap allocated in python since everything in python is an object). Function frames also contain things like return adresses, function arguments, etc. Thus python pushes/pops these function frames at runtime.
+
+# ! C stack (simple):
+# ┌──────────────────────────────┐
+# │ Local variable: result        │
+# │ Function argument: b          │
+# │ Function argument: a          │
+# │ Saved frame pointer (rbp)     │
+# │ Return address (instruction)  │
+# └──────────────────────────────┘
+
+# ! Python stack frames (complex) = full runtime environments for each function call
+# Python Frame (Top of Stack):
+# ┌──────────────────────────────────┐
+# │ Operand Stack (temporary values) │
+# │ Block Stack (try/except/loops)    │
+# │ Locals mapping: {'a': 3, 'b': 4, 'result': 7} │
+# │ Globals mapping                  │
+# │ Builtins mapping                 │
+# │ Code Object (compiled bytecode)  │
+# │ Current instruction pointer      │
+# │ Previous frame pointer (caller)  │
+# └──────────────────────────────────┘
+
+# ! Immutables are thus important in python to 1) Save memory on the heap by variables pointing to existing data on the heap instead of creating/editing new data, these must be immutable so that one variable changing does not affect another
+
 
 # variables in python are dynamically typed and determined at runtime
 n = 0
@@ -298,6 +326,19 @@ s_new = s[::-1]
 print(s_new)
 
 
+# Check if all chars are digits
+print(s.isdigit())
+
+# Check if all chars are alphabetical
+print(s.isalpha())
+
+#Check if all chars are either digits or alphabetical
+print(s.isalnum())
+
+#Check is all chars are whitespace
+print(s.isspace())
+
+
 #Queues (double ended queue) , implemented using double linked list or circular buffer in python
 # append (right or left): O(1)
 # pop (right or left): O(1)
@@ -370,7 +411,7 @@ print(myMap)
 print("alice" in myMap)
 
 # pop from Hashmap
-myMap.pop("alice")
+popped_value = myMap.pop("alice") 
 print("alice" in myMap)
 
 # Dict comprehension
