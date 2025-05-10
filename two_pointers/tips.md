@@ -1,0 +1,1 @@
+-Make sure theoritical foundation is sound before coding up the solution, easy to believe a solution for two pointers based on simply intuition but should always reason through it fully
