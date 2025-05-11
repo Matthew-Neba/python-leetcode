@@ -1,0 +1,1 @@
+- Sliding window is often involved when we are searching for contiguos elements/sub-strings/sub-sequences that match a certain condition. Often need to maintain some aggregate (frequency,sum,product,etc.) of the elements in the window
