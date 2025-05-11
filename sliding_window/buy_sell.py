@@ -1,5 +1,8 @@
 from typing import List
 
+# key to this problem is realizing that we can reduce the brute force search through all pairs of prices. This is done by realizing that if there is a lower price further down the array, then, only need to check all pairs further down from that lower value.
+
+
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
 
