@@ -1,1 +1,3 @@
 - Sliding window is often involved when we are searching for contiguos elements/sub-strings/sub-sequences that match a certain condition. Often need to maintain some aggregate (frequency,sum,product,etc.) of the elements in the window
+
+-Key to sliding window properties is assuring that the sliding window has an invariant property (some condition that is always met). This can be no duplicates, maximum number of replacements, etc. Then use this sliding window to simplify some brute force search to be in linear time
