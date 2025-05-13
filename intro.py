@@ -358,10 +358,10 @@ queue.appendleft(1)
 queue.pop()
 queue.popleft()
 
-# peek from front of queue
+# peek from front of queue, maximum value in a max heap, minimum value in a min heap
 print(queue[0])
 
-# peek the back of queue
+# peek the back of queue, doesn't really say much in a heap
 print(queue[-1])
 
 print(queue)
