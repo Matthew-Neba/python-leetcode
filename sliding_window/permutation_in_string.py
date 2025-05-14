@@ -1,6 +1,6 @@
 from collections import defaultdict
 
-# Key to this problem is realizing that the invariant of the sliding window is ensuring the frequency of every element in the window is less than or equal to the frequncy of the permutation string. Can then just check if the length of the window is equal to the length of the permutation string. If the invariant is true and thier lengths are equal, this implies the sliding window contains an anagram/permutation of the permutation string. 
+# Key to this problem is realizing that the invariant of the sliding window is ensuring the frequency of every element in the window is less than or equal to the frequncy of the permutation string. Can then just check if the length of the window is equal to the length of the permutation string. If the invariant is true and thier lengths are equal, this implies the sliding window must contain an anagram/permutation of the permutation string. 
 
 class Solution:
     def checkInclusion(self, s1: str, s2: str) -> bool:
