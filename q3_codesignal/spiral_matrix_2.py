@@ -1,3 +1,6 @@
+
+# similar to spiral matrix one, key to this problem is using 4 pointers : top, bottom, left, right in order to keep track of which elements we still need to print/append to result
+
 class Solution(object):
     def generateMatrix(self, n):
         """
@@ -42,13 +45,6 @@ class Solution(object):
                 left += 1
     
         return res
-
-
-
-
-
-            
-
 
 solution = Solution()
 print(solution.generateMatrix(3))
