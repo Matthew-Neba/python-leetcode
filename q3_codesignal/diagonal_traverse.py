@@ -16,8 +16,6 @@ class Solution(object):
 
             #top pattern
             while cur_row < rows and cur_row >= 0 and cur_col < cols:
-                print(f"cur_row = {cur_row}, cur_col = {cur_col}")
-
                 res.append(mat[cur_row][cur_col])
                 cur_row -= 1
                 cur_col += 1
@@ -35,8 +33,6 @@ class Solution(object):
             
             #bottom patern
             while cur_row < rows and cur_col < cols and cur_col >= 0:
-                print(f"cur_row = {cur_row}, cur_col = {cur_col}")
-
                 res.append(mat[cur_row][cur_col])
                 cur_row += 1
                 cur_col -= 1
@@ -50,8 +46,6 @@ class Solution(object):
             else:
                 cur_col += 1
 
-            print(f"cur_row = {cur_row}, cur_col = {cur_col}")
-            
         return res
 
 
