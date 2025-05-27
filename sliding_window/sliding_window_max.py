@@ -36,7 +36,6 @@ class Solution:
 
             
 
-
 solution = Solution()
 
 solution.maxSlidingWindow([1,2,1,0,4,2,6], 3)
