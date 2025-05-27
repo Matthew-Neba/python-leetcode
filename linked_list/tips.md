@@ -1,0 +1,1 @@
+-Key to linked lists problems is using several pointers in order to prevent multiple passes over the linked list. Can use algorithms like fast and slow pointer to retrieve the middle element in O(n/2) or in order to detect cycles. Can also just use regular two pointers in order to avoid excesses passes over the linked list.
