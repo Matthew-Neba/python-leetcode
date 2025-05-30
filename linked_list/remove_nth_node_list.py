@@ -1,6 +1,5 @@
 from typing import Optional
 
-# Question is simple to do with two passes but this is O(2n), but with linked lists we are more concerned the hidden constant, O(n) solution is usually trivial. Key here to solve in O(1n) is realizing that we can solve this problem in one pass by using two pointers, where the trail pointer keeps track of the n'th element from the end pointer
 
 # Definition for singly-linked list.
 class ListNode:
@@ -8,6 +7,7 @@ class ListNode:
         self.val = val
         self.next = next
 
+# Question is simple to do with two passes but this is O(2n), but with linked lists we are more concerned the hidden constant, O(n) solution is usually trivial. Key here to solve in O(1n) is realizing that we can solve this problem in one pass by using two pointers, where the trail pointer keeps track of the n'th element from the end pointer
 class Solution:
     def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:
         

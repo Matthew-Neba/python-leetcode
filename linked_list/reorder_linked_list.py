@@ -1,11 +1,11 @@
 from typing import Optional
 
-# Key here is realizing problem can be broken down into three steps. 1) Split linked list in half, 2) reverse second half, 3) merge them together. Another key idea here is the use fast and slow pointers to get the middle of the linked list in O(n/2) time
-
 class ListNode:
      def __init__(self, val=0, next=None):
         self.val = val
         self.next = next
+
+# Key here is realizing problem can be broken down into three steps. 1) Split linked list in half, 2) reverse second half, 3) merge them together. Another key idea here is the use fast and slow pointers to get the middle of the linked list in O(n/2) time
 
 class Solution:
     def reorderList(self, head: Optional[ListNode]) -> None:

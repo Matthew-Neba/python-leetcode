@@ -7,7 +7,9 @@ class Node:
         self.next = next
         self.random = random
 
+        
 # Key idea to do this problem in  constant space is to realize that we need some way to acess the copied random pointer nodes in constant time retroactively since they may not yet exist as we are iterating through the list. Can do this O(n) space and O(n) time using a hashmap. However, can make use of the structure of the linked list by linking the copy node to the original node for every node. This gives a way to acess the random copy nodes in constant time by just doing originalRandomNode.next which will give copied random node. Can then seperate this long linked list into the orginal and the copied list. This solution give O(n) time and O(1) space.
+
 
 class Solution:
     def copyRandomList(self, head: 'Optional[Node]') -> 'Optional[Node]':
