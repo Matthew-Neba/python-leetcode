@@ -259,12 +259,13 @@ arr = [2 * i for i in range(5)]
 print(arr)
 
 
+#! This doesn't work as expected, shallow copy, i.e: changing a row will affect all others, [0] is an immutable here before being assigned, why is works. (note: when changing immutables, new memory adress is created for variable)
+arr = [[0] * 4] * 4
+
 # 2-D list comprehension
 arr = [[0] * 4 for i in range(4)]
 print(arr)
 
-#! This doesn't work as expected, shallow copy, i.e: changing a row will affect all others, [0] is an immutable here before being assigned, why is works. (note: when changing immutables, new memory adress is created for variable)
-arr = [[0] * 4] * 4
 
 #Strings are similar to Arrays but immutable
 s = "abc"
@@ -475,6 +476,8 @@ print(myMap.get("second", "second is not yet in table"))
 
 #! Heaps, are Lists under the hood, heapq just provides algorithms to operate on the List like a heap, heaps are minHeaps by default in python, heaps are not BST. They are like BST but they don't have an inherent order. In BST: left < root < right , but in Min Heaps: parent just has to be smaller than children. 
 
+# ! We can insert any element into a heap in python if that element has the dunder function __lt__ (lessthan) defined on it, eg. the element can be compared to other elements of it's kind. ex: strings, numbers and tuple (compared element wise) like strings. So a hea
+
 # minHeap
 # O(1) to get smallest value       
 # O(logn) for insert
@@ -562,7 +565,12 @@ print(outer("a", "b"))
 # id() is used to check identity of an object. Returns Different values even though several variables reference the same value, but the references are different
 
 
-# ! Since immutables are reassigned when the value changes, cannot simply change the value of an outer function immutable variable from within an inner function, (remember variables passed by reference from outer to inner function), use "non local" keyword to make possible
+# ! In Python, variables defined in an enclosing (non-global) scope are read-only by default in nested functions. 
+# ! To modify such a variable (like 'count' here) inside a nested function, use the 'nonlocal' keyword.
+# ! This tells Python to bind 'count' to the variable in the nearest enclosing scope, not create a new local one. 
+
+# ! Same thing applies for global variables in python, to acess them, must explicitly use the global keyword
+
 def outer():
     count = 0  # Variable in the enclosing scope
 
