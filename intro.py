@@ -1,6 +1,8 @@
 
 # ! In Python, everything is an object, and variables are references (why integers don't overflow like usual)
 
+# ! Empty containers (set,dicts,lists,etc.) are falsy. If empty_container ====> returns false
+
 #! Immutables in python: numbers,str,tuples, bool, frozenset
 # ! Mutables: list,dict,set,custom classes (usually)
 
@@ -439,7 +441,7 @@ for val in myMap.values():
 for key,val in myMap.items():
     print(f"Key: {key}, Value: {val}")
 
-# Can also use defaultdict to initialize empty values in a dictionary
+# Can also use defaultdict to initialize all empty values in a dictionary to a specific type. Can now always assume every key in the dict is of the specified type.
 from collections import defaultdict
 
 list_defaultdict = defaultdict(list)
@@ -625,6 +627,14 @@ my_class_instance = MyClass([1,2,3])
 a = [1, 2]
 b = a
 c = [1, 2]
+
+# ! Custom objects, == is the same as is. __eq__ (used for ==) is the id() function.
+
+#! Critical relatioship with hashes: If two objects are equal (a == b), they MUST have the same hash value (hash(a) == hash(b)). i.e: __hash__ (used in dictionaries) should make use of __eq__( used with ==). Python enforces this behaviour for default objects but is left to the developper for Custom objects. 
+
+#! __lt__ (used with <), __gt__(used with >), etc. Can just use __lt__ , python automatically handle __gt__
+
+
 
 # print(a == c)  # ---> True: contents are equal
 # print(a is c)  # ---> False: different objects
