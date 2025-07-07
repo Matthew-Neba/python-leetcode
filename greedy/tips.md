@@ -1,0 +1,1 @@
+- For greedy problems, begin by picking the seemingly best/obvious/intuitive choice or method. Then, use properties of the problem to show that this seemingly best obvious choice is actually the best.
