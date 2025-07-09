@@ -3,3 +3,5 @@
 -Key to sliding window properties is assuring that the sliding window has an invariant property (some condition that is always met). This can be no duplicates, maximum number of replacements, etc. Then use this sliding window to simplify some brute force search to be in linear time
 
 -When using while loop to implement sliding window, may sometimes need to do one final phase of shrinking the left pointer for the final index of the right pointer. Could be avoided if sliding window was implemented with a for loop for every possible right pointer position
+
+-Tips on finding maximums: If we have a fixed range of values, then can always obtain maximum or minimum in constant time. Can be done with a hashmap storing frequncies of each value. Can also get top k maximum elements with bucket sort variation (can be done for any k if we have only non negative values/can be modified as such by some function). Can also finally use a heap for nlogk if we want top K elements and don't have a fixed range can also use quick select instead of heap.
