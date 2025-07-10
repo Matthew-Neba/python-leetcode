@@ -1,11 +1,11 @@
 
-- BFS: impolemented with a queue, iterative
--DFS: implemented recursively usually, sometimes iteratively with a stack
+-BFS: impolemented with a queue, iterative ✅
+-DFS: implemented recursively usually, sometimes iteratively with a stack ✅
 
--Djikstras:
+-Djikstras ✅
 
--Prim:
+-Prim ✅
 
--Union Find:
+<!--? TODO: -Union Find:  -->
 
--Topological Sort:
+-Topological Sort ✅

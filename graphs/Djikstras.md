@@ -47,3 +47,4 @@ The algorithm's correctness stems from the fact that when we select a node with 
 Dijkstra's algorithm elegantly combines dynamic programming's principle of building solutions incrementally with a greedy approach's local optimization strategy. The key insight is that the greedy choice of always selecting the minimum distance node is globally optimal due to the problem's structure and the algorithm's systematic exploration of the graph.
 
 ---
+
