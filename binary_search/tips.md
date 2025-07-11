@@ -1,3 +1,5 @@
 -   Key to this problem was realizing that there is a more genral form of binary search. I call this "biinary elimination". Binary elimination is just a process for eliminating half of the search space by performing a series of checks in constant time. Any algorithm like binary search which follows this pattern can reduce the search space to one value in O(logn) time. The specific check for the koko problem was checking if koko can eat all the bananas with the given k/hour rate.
 
 -  In some problems, we follow a binary search pattern: candidate optimization. We use binary search to fetch possible candidates in logn time, and we compare the candidates to the previous one to ensure we have the optimal one. Used in binary elimination problems where we are not looking for an exact target element, but some element that matches some criteria.
+
+- When attempting to solve problem/improve time and space complexities, can sometimes exchange the current problem for an equivalent one that is more efficient/easier to solve. "Invert, always invert" - Jacobi
