@@ -5,36 +5,36 @@ from typing import List
 
 class Solution:
     def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:
-        
-        # choose minimum of both arrays to minimize time complexity to O(log(min(m,n)))
-        choose_num = 1 if len(nums1) < len(nums2) else 2
-        search_arr = nums1 if choose_num == 1 else nums2
-        second_arr = nums2 if choose_num == 1 else nums1
+
+        # TODO: ensure nums1 contains the minimum lenth array
+        if len(nums2) < len(nums1):
+            nums1,nums2 = nums2, nums1
 
         total_len = len(nums1) + len(nums2)
-        half_elements = total_len // 2
+        half_len = total_len // 2
 
-        low, high = 0, len(search_arr)
-
+        # partitioning process using binary search
+        # note, the indexes for low and high are different than regular binary search to handle special small array edge cases
+        low , high = -1 , len(nums1) - 1
         while high >= low:
-            mid = (low + high) // 2
-            elems_need = half_elements - mid
+            mid = (high + low) // 2
+            elems_needed = half_len - mid - 1
 
-            # Partition values
-            first_low_end = search_arr[mid - 1] if mid > 0 else float("-inf")
-            first_high_start = search_arr[mid] if mid < len(search_arr) else float("inf")
-            second_low_end = second_arr[elems_need - 1] if elems_need > 0 else float("-inf")
-            second_high_start = second_arr[elems_need] if elems_need < len(second_arr) else float("inf")
+            # TODO: proper handling of the edge cases when the parition may include whole small arr or none of it
+            nums1_low_end = nums1[mid] if mid > -1 else float("-inf")
+            nums1_high_start = nums1[mid+1] if mid < len(nums1) - 1 else float("inf")
 
-            # Valid partition found
-            if first_low_end <= second_high_start and second_low_end <= first_high_start:
+            nums2_low_end = nums2[elems_needed - 1] if elems_needed > 0 else float("-inf")
+            nums2_high_start = nums2[elems_needed] if elems_needed < len(nums2) else float("inf")
+            
+            # TODO: verification of correct partitions, ensure using <= here important
+            if nums1_low_end <= nums2_high_start and nums2_low_end <= nums1_high_start:
                 if total_len % 2 == 0:
-                    return (max(first_low_end, second_low_end) + min(first_high_start, second_high_start)) / 2
+                    return (max(nums1_low_end, nums2_low_end) + min(nums1_high_start, nums2_high_start)) / 2
                 else:
-                    return min(first_high_start, second_high_start)
+                    return min(nums1_high_start, nums2_high_start)
 
-            # Binary search adjustment
-            elif first_low_end > second_high_start:
+            elif (nums1_low_end > nums2_high_start):
                 high = mid - 1
             else:
                 low = mid + 1
