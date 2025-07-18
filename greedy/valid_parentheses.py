@@ -1,5 +1,5 @@
 
-# Key to this problem is realizing the choice of always using the star as a closed bracket can not be wrong since it can be corrected further down the line. 
+# Key to this problem is realizing that we already know how to handle the open and closed brackets if we use a stack (or a regular counter for this problem since there is only one kind of bracket). Thus, the * are the only problem to handle. To handle the star, we realize that if we need to use a star to form a closed bracket, we may potentially need to reverse that operation if we see the matching closed bracket later down the string. If we need an open bracket however, then there is no reversing that operation later down the line.
 
 # O(n) time complexity and O(1) space complexity
 class Solution:
