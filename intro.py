@@ -632,7 +632,7 @@ c = [1, 2]
 
 #! Critical relatioship with hashes: If two objects are equal (a == b), they MUST have the same hash value (hash(a) == hash(b)). i.e: __hash__ (used in dictionaries) should make use of __eq__( used with ==). Python enforces this behaviour for default objects but is left to the developper for Custom objects. 
 
-#! __lt__ (used with <), __gt__(used with >), etc. Can just use __lt__ , python automatically handle __gt__
+#! __lt__ (used with <), __gt__(used with >), etc. Can just use __lt__ , python automatically handles __gt__
 
 
 
