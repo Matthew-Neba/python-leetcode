@@ -32,19 +32,25 @@ class Solution:
             cur_index = choice_index
             jumps += 1
 
-# Same time and space complexity as the first solution, but eliminates the for loop by keeping track of the maximum position we can reach given the i'th as so far encountered in the array.
+# Same time and space complexity as the first solution, but eliminates the for loop by keeping track of the maximum position we can reach given the i'th as so far encountered in the array. Essentially, keep track of the current interval that the i'th jump has acess to and use max jump in the current interval to form the next interval. Can be done with two pointers.
 class Solution:
     def jump(self, nums: List[int]) -> int:
         jumps = 0
-        jump_end = 0
+        end_jump = 0
         furthest_position = 0
 
         for i in range(len(nums) - 1):
             furthest_position = max(furthest_position, i + nums[i])
-            
-            if i == jump_end:
+
+            # check if we have reached the maximum position we can jump to from the previous jump
+            if i == end_jump:
+                # update the new maximum jump position
+                end_jump = furthest_position
                 jumps += 1
-                jump_end = furthest_position
 
         return jumps
+
+        
+
+       
 
