@@ -33,6 +33,8 @@ class Solution:
             jumps += 1
 
 # Same time and space complexity as the first solution, but eliminates the for loop by keeping track of the maximum position we can reach given the i'th as so far encountered in the array. Essentially, keep track of the current interval that the i'th jump has acess to and use max jump in the current interval to form the next interval. Can be done with two pointers.
+
+#O(n) time complexity, O(1) space complexity
 class Solution:
     def jump(self, nums: List[int]) -> int:
         jumps = 0
