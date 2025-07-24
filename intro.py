@@ -1,5 +1,7 @@
 
-# ! In Python, everything is an object, and variables are references (why integers don't overflow like usual)
+# ! In Python, everything is an object, and variables are references (why integers don't overflow like usual). Thus the data for all variables are stored on the heap. 
+
+# ! Python tracks the references to memory allocations on the heap and frees them when the referecnec count reaches 0. It has a garbage collector
 
 # ! Empty containers (set,dicts,lists,etc.) are falsy. If empty_container ====> returns false
 
@@ -568,7 +570,7 @@ print(outer("a", "b"))
 
 
 # ! In Python, variables defined in an enclosing (non-global) scope are read-only by default in nested functions. 
-# ! To modify such a variable (like 'count' here) inside a nested function, use the 'nonlocal' keyword.
+# ! To reassign (modifying a variable doesn't require the nonlocal keyword. ex: list,dict,etc.) such a variable (like 'count' here) inside a nested function, use the 'nonlocal' keyword.
 # ! This tells Python to bind 'count' to the variable in the nearest enclosing scope, not create a new local one. 
 
 # ! Same thing applies for global variables in python, to acess them, must explicitly use the global keyword
