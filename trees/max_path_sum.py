@@ -15,7 +15,7 @@ class Solution:
         res = float("-inf")
         def dfs_max_path(root):
             nonlocal res
-            if root == None:
+            if not root:
                 return 0
             
             # do the maximum with 0, to essentially eliminate negative paths since they reduce the maximum
