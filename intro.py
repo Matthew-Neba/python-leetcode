@@ -308,12 +308,12 @@ s = "hello world"
 new_s = s.replace("l", "x")  
 print(new_s)   # ----> hexxo worxd
 
-# can seperate a string by a delimiter
+# can seperate a string by a delimiter, O(n)
 string = "ab.cd.ed.gh.ij"
 strings = string.split(".") 
 print(strings)
 
-# can join a list of strings with a delimiter
+# can join a list of strings with a delimiter, O(n) time
 strings = ["ab", "cd", "ef", "gh", "ij"]
 print(" delimiter ".join(strings))
 

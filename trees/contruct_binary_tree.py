@@ -1,0 +1,2 @@
+
+# Key to this problem is realizing that the missing information from the preorder array is which nodes go in the left vs right subtree of the current node. However, we can get this information from the inorder traversal array if we just search for the current node in that array and split the array from that information. We can also use a hashmap in order to perform this search for the current node in the inorder array more efficient
