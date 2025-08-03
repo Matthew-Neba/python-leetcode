@@ -1,4 +1,5 @@
 from typing import Optional, List
+from collections import deque
 
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
@@ -6,9 +7,9 @@ class TreeNode:
         self.left = left
         self.right = right
 
-from collections import deque
-
 # Key to this problem is realizing that to do a right side view, we can just use BFS to do a level order traversal and return the far right node in each level.
+ 
+#O(n) time complexity, O(n) space complexity
 class Solution:
     def rightSideView(self, root: Optional[TreeNode]) -> List[int]:
 
