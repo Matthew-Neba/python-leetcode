@@ -8,7 +8,7 @@ class TreeNode:
 
 #  Key to this problem is realizing that we just need to traverse the tree using DFS or BFS while maintaining the maximum value encountered along each path. If the current node is greater than the maximum, increment good nodes.
 
-# O(n) time complexity. O(n) space complexity
+# O(n) time complexity. O(h) space complexity
 class Solution:
     def goodNodes(self, root: TreeNode) -> int:
         # run dfs while keeping track of the maximum element across each path

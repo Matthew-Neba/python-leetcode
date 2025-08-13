@@ -8,6 +8,7 @@ class TreeNode:
         self.right = right
 
 # This problem is just BFS. The tricky part here is to ensure we are only extracting the nodes from the current level when traversing the queue. This can be done by noting the current size of the bfs queue before traversing it.
+# O(n) time complexity, O(n) space complexity
 class Solution:
     def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
         if not root:

@@ -9,7 +9,7 @@ class TreeNode:
 
 # Key to this problem is realizing that to do a right side view, we can just use BFS to do a level order traversal and return the far right node in each level.
  
-#O(n) time complexity, O(n) space complexity
+#O(n) time complexity, O(h) space complexity
 class Solution:
     def rightSideView(self, root: Optional[TreeNode]) -> List[int]:
 

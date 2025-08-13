@@ -36,10 +36,6 @@ class Codec:
 
     # Decodes your encoded data to tree.
     def deserialize(self, data: str) -> Optional[TreeNode]:
-        # follow the dfs instructions written in the serialization string, need iterative 
-        # dfs here due to no way to retrieve the left and right subtrees for the recursive
-        # call from the serialization string
-
         # prepare data
         data_arr = data.split(",")
 

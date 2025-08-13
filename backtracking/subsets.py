@@ -4,7 +4,7 @@ from typing import List
 
 
 # O(n * 2^n) time complexity, 2*n recursive calls since 2^n nodes in a full decision tree, and for each recursive call, we are copying path O(n)
-# O(n + n) + O(n) space complexity, n for the recursive stack other n for the space to store path since it is being reused (popping and reusing it) 
+# O(n + n) = O(n) space complexity, n for the recursive stack other n for the space to store path since it is being reused (popping and reusing it) 
 class Solution:
     def subsets(self, nums: List[int]) -> List[List[int]]:
         res = []

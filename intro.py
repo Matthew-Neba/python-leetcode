@@ -40,6 +40,11 @@
 
 # ! Immutables are thus important in python to 1) Save memory on the heap by variables pointing to existing data on the heap instead of creating/editing new data, these must be immutable so that one variable changing does not affect another
 
+# !  Another cool feature of python are the iterators and generators. An iterator in python is an object that allows you to iterate over values without loading those values directly into memory. It does this by keeping track of the cur element in the iterator with a pointer. When we use for loops with range() and in , python implicitly create iterators and goes over them. 
+
+#! We can use iter() to create iterators out of all list like elements in python and even things like files. next() is used to get the next element from the iterator. next() raises an exception when there is nothing left in the iterator.
+
+# ! The GIL in python is a global mutex for python's memory management system. Since python's memory management system is not thread safe (due to reference counting), each object can only be acessed by one thread at a time. Thus, python limits code execution to one thread at a time (no true parallelisim but there is concurrency). Therefore, multiprocessing is preferred in Python over multithreading.
 
 # variables in python are dynamically typed and determined at runtime
 n = 0

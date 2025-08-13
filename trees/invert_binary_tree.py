@@ -10,7 +10,7 @@ class TreeNode:
 
 
 
-# DFS solution, O(V + E) time complexity -> O(n) for a tree, O(n) space
+# DFS solution, O(V + E) time complexity -> O(n) for a tree, O(h) space
 class Solution:
     def invertTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
         # don't need visited set for trees since they are UNDAG and no cycles can exist
@@ -25,7 +25,7 @@ class Solution:
 
 
 from collections import deque
-# BFS version, O(V + E) time complexity -> O(n) for a tree, O(n) space
+# BFS version, O(V + E) time complexity -> O(n) for a tree, O(h) space
 class Solution:
     def invertTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
         if not root:

@@ -8,7 +8,7 @@ class TreeNode:
 
 #  This problem was a bit trickier than expected. I originally taught I could improve the time complexity of the solution by checking whether or not the current node is the same as multiple subtrees in O(1) time. If this was the case, the time complexity of the solution would be O(n). However, this was found to be impossible.
 
-# O(n * min(m,n)) time complexity, O(n + min(m,n)) space complexity
+# O(n * min(m,n)) time complexity, O(h + min(m,n)) space complexity, where h is the height of the tree
 class Solution:  
     # check whether or not two trees are the same O(min(m,n)) time, O(min(m,n)) space
     def is_same(self, root, subRoot):
@@ -28,7 +28,7 @@ class Solution:
 
     def isSubtree(self, root: Optional[TreeNode], subRoot: Optional[TreeNode]) -> bool:
         # run dfs for every node and check if thier respective subtrees match the ones for
-        # the subRoot O(n * min(m,n)) time, O(n + min(m,n)) space
+        # the subRoot O(n * min(m,n)) time, O(h + min(m,n)) space, where h is the height of the tree
         found_subtree = False
         def dfs_isSubtree(root):
             nonlocal found_subtree

@@ -13,7 +13,7 @@ class Solution:
         
         res = True
 
-        # O(n) time , O(n) space
+        # O(n) time , O(h) space
         def dfs_is_valid_bst(root):
             nonlocal res
             if not root:
