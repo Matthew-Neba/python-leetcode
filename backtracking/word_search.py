@@ -3,6 +3,7 @@ from typing import List
 # 
 #  Then we realize that even if we don't resuse the previous checks for a square, we will just redo it 3 times at most since each grid square only has 3 adjecent squares. Therefore, DP will only reduce the work by a maximum factor of 3 and this, not affect the time complexity while increasing the space complexity. Backtracking is optimal here
 
+# O(m * n * 4 * 3^d) time complexity, where d is the length of the search word. O(d) space complexity
 class Solution:
     def exist(self, board: List[List[str]], word: str) -> bool:
         # up, down, right, left
@@ -39,7 +40,7 @@ class Solution:
                 path_set.remove((cur_row, cur_col))
 
 
-        # run the backtrack on every grid square
+        # run the backtrack for every grid square
         for row in range(board_rows):
             for col in range(board_cols):
                 backtrack(set(), row ,col)

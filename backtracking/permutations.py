@@ -27,3 +27,27 @@ class Solution:
         
         backtrack([], 0)
         return res
+
+# another possible solution, a bit less optimal than the previous one in terms of space and time though, but not asymtotically
+class Solution:
+    def permute(self, nums: List[int]) -> List[List[int]]:
+
+        res = []
+        def backtrack(path,consider_elems):
+            if len(consider_elems) == 0:
+                # O(n) time
+                res.append(path[:])
+                return
+            
+            # keeps track of the current element added to path, we do not want to include it in the further permutation options
+            for num in list(consider_elems):
+                # swap out the element
+                path.append(num)
+                consider_elems.remove(num)
+                backtrack(path, consider_elems)
+                path.pop()
+                consider_elems.add(num)
+
+        nums_set = set(nums)
+        backtrack([], nums_set)
+        return res

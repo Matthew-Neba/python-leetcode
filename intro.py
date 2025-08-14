@@ -213,6 +213,8 @@ print(b)
 # Loop through lists
 nums = [1,2,3]
 
+# ! With for loops, cannot modify the size of container for all containers in python (lists are possible but unpredictable). For sets, cannot even modify the set in any way. For lists and dicts, can modify the elements.
+
 # element wise
 for n in nums:
     print(n)
