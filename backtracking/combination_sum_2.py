@@ -1,9 +1,10 @@
 from typing import List
 from collections import Counter
 
-# Key to this pro
+# key to this problem is realizing that we would like to enumerate all possible combinations that sum up to the target. We can use a decision tree to do this. However, if we naively do this, we will end up with repeated combinations which is not allowed.Therefore, we need a way to ensure the decision tree does not include duplicate combinations. We can do this by ensuring that once we decide not to include an element for some decision subtree, we can never decide to include it again for that subtree. Can be done with sorting which will allows us to skip over duplicate values or by using a hashmap. Hashmap is shown here, Subsets 2 does it with sorting
 
-#  O(2^n) time complexity (to build decision tree), O(n) space complexity
+
+#  O(2^n) time complexity (to build decision tree), O(n) space complexity for maximum recursion stack depth
 class Solution:
     def combinationSum2(self, candidates: List[int], target: int) -> List[List[int]]:
         

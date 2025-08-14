@@ -17,6 +17,6 @@
 
         for choice in choices:
             if is_valid(choice, path):
-                path.append(choice)  # Make choice
-                backtrack(path, updated_choices)     # Explore further
-                path.pop()                           # Undo choice, necessary since path is shared
+                path.append(choice)     # Make choice
+                backtrack(path, updated_choices)        # Explore further
+                path.pop()                       # Undo choice, necessary to undo effects to all shared variables between nodes
