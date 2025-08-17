@@ -1,6 +1,6 @@
 from typing import List
 
-#  Key to this problem was finding out how to check the constraints for the backtracking optimally. We know we can use a set for the rows and cols to check the row and cols constraint in O(1) time. The hard part was checking the diagonal constraints in O(1) time. This can however be done by realizing that each line has an equation. We can then obtain the positive and negative diag line equation for any square and store these equations for the positive and negative diagonal lines in a a set. Then, we can check the diagonal constraints in constant time.
+#  Key to this problem was finding out how to check the constraints for the backtracking optimally. We know we can use a set for the rows and cols to check the row and cols constraint in O(1) time. The hard part was checking the diagonal constraints in O(1) time. This can however be done by realizing that each line has an equation. We can then obtain the positive and negative diag line equations for any grid square and store these equations in two sets. Then, we can check the diagonal constraints in constant time.
 
 # O(n!) time complexity (not exactly n! but we are reducing by atleast 2 on each row), O(n^2) space complexity for the board
 class Solution:
