@@ -34,7 +34,7 @@ class Solution:
             dfs_surrounded((row + 1, col))
             dfs_surrounded((row - 1, col))
             dfs_surrounded((row, col + 1))
-            dfs_surrounded((row, col -1))
+            dfs_surrounded((row, col - 1))
 
         # run dfs on all border "O"
         for row in range(row_count):
