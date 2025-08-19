@@ -1,4 +1,7 @@
-There is one way to improve space and time complexity (even runtime as well). This is to 
+
+<!-- TODO: ALWAYS begin all problems by thinking of the problem generally. Do not think of any appraoches like sliding window, backtracking, dfs, etc. Start from a high level -->
+
+-There is one way to improve space and time complexity (even runtime as well). This is to 
 
 # Eliminate superflous calculations/work and extra space. This can be done by:
 

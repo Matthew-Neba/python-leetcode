@@ -1,10 +1,10 @@
 from typing import List
 
-# can do bfs or dfs here aswell, but chance to do union find. This
-# is essentially a number of islands question
+# This is simply a union find questions. Can do bfs or dfs here aswell like in number of islands, but this is my chance to practice union find. 
+
+# O(E * inv_ackerman(n) + V) time complexity, O(V) space complexity
 class Solution:
     def countComponents(self, n: int, edges: List[List[int]]) -> int:
-
         class Union:
             def __init__(self, n):
                 self.sizes = [1 for _ in range(n)]
