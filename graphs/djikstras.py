@@ -1,8 +1,7 @@
 
 import heapq
 
-#O((V+E)log(V)) time complexity, O(V) space complexity
-
+#O((V+E)log(V)) time complexity, O(V + E) space complexity
 def dijkstra(graph, start):
     dist = {node: float('inf') for node in graph}
     dist[start] = 0

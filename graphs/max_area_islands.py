@@ -39,7 +39,6 @@ class Solution:
                 for dr,dc in directions:
                     queue.append((row + dr, col + dc))
             
-            print(island_size)
             max_area = max(max_area, island_size)
         
         for row in range(len(grid)):

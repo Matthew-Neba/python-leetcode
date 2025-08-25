@@ -3,8 +3,8 @@ from collections import deque
 
 
 # We can optimize the below solution by realizing that from each word, we only need to check if we can reach any one letter mutation in our available words set. This means we need to compare the current word to 26 X m words instead of n words. i.e: Problem inversion once again. Instead of checking if the current word is different by at most 1 character from all the n words. Can check if any of the one character differences of the current word belongs in the n words. 
-from collections import deque
-class Solution:
+# O(m^2 * n) time complexity, O(n) space complexity
+class Solution: 
     def ladderLength(self, beginWord: str, endWord: str, wordList: List[str]) -> int:
         
         # create a set to store the words
@@ -23,7 +23,6 @@ class Solution:
                 for i in range(len(cur_word)):
                     for c_int in range(ord("a") , ord("z") + 1):
 
-                        
                         new_word = cur_word[0:i] + chr(c_int) + cur_word[i+1:]
                        
                         # check if the word belongs in the available list
@@ -43,6 +42,7 @@ class Solution:
 
 
 # Key to this problem is realizing that the naive backtracking approach can be optimized. This is because we don't care of the exact path we take to get to a word, or the number of ways to get to it, etc. We only care if it is reachable within i steps. Therefore, if we can reach a word from some level in the backttracking tree, never consider the word for the other backtracking nodes in the same level or in any future level. Note that this problem now resemble a simple bfs.
+# O(n^2 * m) time complexity, O(n) space complexity
 class Solution:
     def ladderLength(self, beginWord: str, endWord: str, wordList: List[str]) -> int:
 
