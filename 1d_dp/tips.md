@@ -3,6 +3,7 @@
 2) Are we generating the smallest possible number of total subproblems ? (ex: House Robber)
 3) Can we reduce the amount of times we call each subproblem ? (ex: Longest Palindromic String)
 
+- Drawing the decision tree and seeing the repeated subproblem calls can significantly help with this. Visualizing the subproblems can help to see where calls are repeated
 
 -   To determine the time complexity of dp, two steps:
 1. First consider the time it takes to solve one subproblem given all the others are solved
@@ -15,3 +16,4 @@
 -   There is often a dichotomy between greedy and dp solutions. Some solutions that seem
     solvable by dp can actually be solved more efficiently by the greedy solution instead.
 
+- Palindrome string problems can sometimes be made more efficient by starting inwards at the center of the palindrome and expanding outwards
