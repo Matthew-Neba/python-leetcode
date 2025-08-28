@@ -1,14 +1,16 @@
 from typing import List
 class Solution:
+    # 
+    # Notice that if a partition into two subsets is possible, it must equal be equal to
+    # sum(nums)/2. Therefore, we just need to see if there exists some partition of the
+    # numbers such that thier sum is equal to sum(nums)/2. 
+    #
+    # Problem becomes 0/1 knapsack equivalent
+    # In 0/1 knapsack, be careful to seperate the DP arrays
+    # get  the sum of numbers
+    # O(n*target) time complexity and O(target) space complexity
     def canPartition(self, nums: List[int]) -> bool:
-        # 
-        # Notice that if a partition into two subsets is possible, it must equal be equal to
-        # sum(nums)/2. Therefore, we just need to see if there exists some partition of the
-        # numbers such that thier sum is equal to sum(nums)/2. 
-        #
-        # Problem becomes 0/1 knapsack equivalent
-        # In 0/1 knapsack, be careful to seperate the DP arrays
-        # get  the sum of numbers
+ 
         total_sum = sum(nums)
         if total_sum % 2 == 1:
             return False

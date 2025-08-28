@@ -16,4 +16,18 @@
 -   There is often a dichotomy between greedy and dp solutions. Some solutions that seem
     solvable by dp can actually be solved more efficiently by the greedy solution instead.
 
-- Palindrome string problems can sometimes be made more efficient by starting inwards at the center of the palindrome and expanding outwards
+5 Basic 1D DP Patterns:
+1) Unbounded Knapsack (loop over all coins to use for each possible target), 
+# O(n*target) time complexity, O(target) space complexity
+
+2) 0/1 Knapsack (build table starting from no coins and a target of 0, to all targets we can reach if we can use all coins. Incrementally update the table for each coin we use), 
+# O(n*target) time complexity , O(target) space complexity
+
+3) Palindromic Problems (expand outwards starting from each possible palindromic center) ,
+# O(n^2) time complexity, O(1) space complexity
+
+4) LCS (Longest Common Subsequence) (finding the longest sequence common to two strings while maintaining relative order)
+# O(n * m) time complexity and O(n * m) space complexity
+
+5) Interval DP problems, use where order of elements matters (ex: burst ballons)
+# O(n^3) time complexity for three nested loops (start, end, split), O(n^2) space complexity (to store all possible subarray splits)

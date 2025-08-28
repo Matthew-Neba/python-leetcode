@@ -1,5 +1,5 @@
 
-<!-- TODO: ALWAYS begin all problems by thinking of the problem generally. Do not think of any appraoches like sliding window, backtracking, dfs, etc. Start from a high level -->
+<!-- TODO: ALWAYS begin all problems by thinking of the problem generally. Do not think of any appraoches like sliding window, backtracking, dfs, etc. Start from a high level. Play around with the problem, think of the brute force solution. Then after this, start optimizing -->
 
 
 # Ways to Optimize Problems:
