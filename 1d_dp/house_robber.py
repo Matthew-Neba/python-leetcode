@@ -38,8 +38,8 @@ class Solution:
             dp[cur_idx] = max(rob_money, no_rob_money)
             return dp[cur_idx]
         
-        rob_houses(0)
-        return dp[0]
+        return rob_houses(0)
+        
 
 
             

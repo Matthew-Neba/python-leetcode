@@ -8,4 +8,4 @@
 
 -   Alot of graph problems can be simplifgied with inversion. ex: pacific atlantic ocean, islands and treasure# common with graphing problems. ex: pacific atlantic ocean, islands and treasure
 
--  Generally, do not return values when doing recursive dfs on graphs. We cannot use recursive dfs expecting to return something like in trees since cyle exists. You can have A depends on B which depends on C which depends on A. DFS can only be used for marking for graphs
+-  Generally, do not return values when doing recursive dfs on graphs. We cannot use recursive dfs expecting to return something like in trees since cyle exists. You can have A depends on B which depends on C which depends on A. DFS can only be used for marking for graphs in this case.

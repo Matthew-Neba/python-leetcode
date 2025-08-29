@@ -3,7 +3,9 @@
 2) Are we generating the smallest possible number of total subproblems ? (ex: House Robber)
 3) Can we reduce the amount of times we call each subproblem ? (ex: Longest Palindromic String)
 
-- Drawing the decision tree and seeing the repeated subproblem calls can significantly help with this. Visualizing the subproblems can help to see where calls are repeated
+- Begin with backtracking. Drawing the decision tree and seeing the repeated subproblem calls can significantly help with this. Visualizing the subproblems can help to see where calls are repeated
+
+- Be careful about what the recursive function with DP is returning
 
 -   To determine the time complexity of dp, two steps:
 1. First consider the time it takes to solve one subproblem given all the others are solved
@@ -26,8 +28,11 @@
 3) Palindromic Problems (expand outwards starting from each possible palindromic center) ,
 # O(n^2) time complexity, O(1) space complexity
 
-4) LCS (Longest Common Subsequence) (finding the longest sequence common to two strings while maintaining relative order)
+4) LCS (Longest Common Subsequence) This type of DP/varitaions of it are based on the idea of ensuring indexes of strings have some property (For LCS, the property was the indexes of both strings must belong to the LCS. For Edit Distance, the property was both stritngs having the same characters at all thier indexes)
 # O(n * m) time complexity and O(n * m) space complexity
 
-5) Interval DP problems, use where order of elements matters (ex: burst ballons)
+5) String DP. This type of DP is multidimensional based on the number of input strings. It relies on memoizing results of strings based on the indexes of the strings. For ex, for two strings (i,j) is used as keys for the DP table. Ex: distinct subsequences, Interleaving string. 
+# O(n * m * ... * k) time complexity and O(n * m * .... * k) space complexity , where n,m, ... , k are the indexes for the input strings
+
+6) Interval DP problems, use where order of elements matters (ex: burst ballons)
 # O(n^3) time complexity for three nested loops (start, end, split), O(n^2) space complexity (to store all possible subarray splits)
