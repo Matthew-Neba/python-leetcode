@@ -2,4 +2,4 @@
 
 - Spam dummy nodes when you can, simplifies alot. Can help with simnplifying inserting/deletion operations
 
--Usually don't want to modify original linked list when askign for copy, etc. Ask clarifying questions
+-Usually don't want to modify original linked list when asking for a copy, etc. Ask clarifying questions

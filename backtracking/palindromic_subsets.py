@@ -12,7 +12,7 @@ class Solution:
             # choice idx is the i'th split (0-indexed)
             if choice_idx > len(s) - 1:
                 if start_idx > len(s) - 1:
-                    # check if last index was inclueded to ensure 
+                    # check if last index was included to ensure 
                     # the partition includes the whole string
                     res.append(path[:])
                 return
