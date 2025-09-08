@@ -9,3 +9,6 @@
 2) Using key insights to eliminate excessive work. ex: Binary search problems, we eliminate checking all values greater/less than the current value by taking advantage of the fact that the data is sorted.
 
 3) Inverting/Exchanging problems for equivalent ones can often simplify the solution or make it more efficient.
+
+4) In Big-O analysis, be aware of constants in the problem that can trim the time complexity. ex: maximum frequency of elements
+, but we only have 26 unique elements. Here time complexity of this maximum operation is O(26) = O(1). Just be more careful when doing Big O Analysis, monotonic stack questions may also at first seem to not be O(n) when they are indeed O(n).

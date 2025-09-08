@@ -21,14 +21,14 @@ class Solution:
             cur_level = []
             # for loop is to make sure to only explore nodes of the current level
             for _ in range(len(queue)):
-                cur_node = queue.pop()
+                cur_node = queue.popleft()
                 cur_level.append(cur_node.val)
 
                 if cur_node.left:
-                    queue.appendleft(cur_node.left)
+                    queue.append(cur_node.left)
 
                 if cur_node.right:
-                    queue.appendleft(cur_node.right)
+                    queue.append(cur_node.right)
         
             res.append(cur_level)
         
