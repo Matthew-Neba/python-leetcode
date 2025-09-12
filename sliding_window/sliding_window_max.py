@@ -3,6 +3,9 @@ from collections import deque
 
 # Originally, was gonna use a min-heap to do a varaition of the top-k algorithm to get an O(n * log(k)) time and O(k) space algorithm. But a better time complexity with same space complexity exists with a deque. To get this solution, the key observation was that if we find that a value after an index in the window is larger that the ones before, will never need to consider any of those previous indices again.
 
+# The monotonic queue method for obtaining the maximum/minimum in a sliding window takes advantage of the fact
+# that both the left and right pointers of the window are moving in the same direction. If they are not, we cannot use this method.
+
 # ! To To help with the implementation of all algorithms, imagine yourself as the computer and what needs to be done on each step. Greatly helps
 
 class Solution:

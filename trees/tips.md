@@ -4,6 +4,8 @@ Recursion is not magic. It is just a tool to easily write the solution to proble
 
 -   When doing recursion, be careful about handling the case where the root/children are Null as the base case. This can lead to confusion. If possible, use root being Null as the base case
 
+- When dealing with levels/heights, try BFS first. If dealing with other properties of path, DFS may be more suited.
+
 -   Some problems use a specific recursion pattern for trees. The pattern is we are looking for the best value/metric that can be calculated for every single node in the tree. However, we can resuse the work from a node to help it's parent node. K'th smallest integer in BST, Balanced binary tree, Binary Tree Maximum Path Sum are examples of this. Use modified DFS for these problems. DO NOT USE NESTED RECURSION FOR THESE PROBLEMS.
 
 -   Remember that using global variables in recursion is like using that global variable as an implicit parameter to the recursive function
