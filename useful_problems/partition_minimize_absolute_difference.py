@@ -4,7 +4,8 @@ from typing import List
 class Solution:
     def minimumDifference(self, nums: List[int]) -> int:
         """
-        Greedy fails with counter example, do backtracking / dp 
+        Greedy fails with counter sexample (This problem is a variatino of k-way partitioning which is NP), 
+        do backtracking / dp 
 
         we can get O(maxSum(num)) time and space but that can be ridiculously expensive since num[i] in 
         range 10^7. 
