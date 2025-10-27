@@ -13,7 +13,7 @@ class Solution:
         #
         MOD = 10**9 + 7
 
-        # compute pascals table for O(1) combinations calculation
+        # compute Pascal's triangle for O(1) combinations calculation
         C = [[0] * (31) for _ in range(31)]
         for i in range(31):
             C[i][0] = C[i][i] = 1
