@@ -76,7 +76,7 @@ class Solution:
             elif len(top_x) == x and rest:
                 # see if we need to replace an element from top_x
                 min_top_x = top_x[0]
-                # replace element
+                # replace element (greedily use the highest item in rest)
                 if rest[-1] > min_top_x:
                     top_x_sum -= min_top_x[0] * min_top_x[1]
                     top_x_sum += rest[-1][0] * rest[-1][1]
