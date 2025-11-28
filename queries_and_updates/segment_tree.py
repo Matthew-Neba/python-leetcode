@@ -31,8 +31,12 @@ Now, if we would like to do a range query, notice that we can traverse the tree 
 Now for updating an index, we just start from the leaf node corresponding to that index and propagate the update upwards. Notice that since the height of the tree is log(n), we can do a point update in log(n) time.
 """
 
-
-# segment tree implementation for "+" operation
+#
+# Segment tree implementation for "+" operation
+#
+# O(n) time , O(n) space to build the tree
+# O(logn) query time, O(logn) point update time
+#
 class SegmentTree:
     def __init__(self, arr):
         # find first power of 2 larger than n to pad array (use identity values for the given operation).
@@ -79,6 +83,7 @@ class SegmentTree:
 
         left_child_contribution = self.query(2*node, node_low, split_interval_point , query_low, query_high)
         right_child_contribution = self.query(2*node + 1 , split_interval_point+ 1 , node_high, query_low, query_high)
+        
         return left_child_contribution + right_child_contribution
         
 

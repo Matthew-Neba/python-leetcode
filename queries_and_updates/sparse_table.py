@@ -15,4 +15,42 @@ Big idea is to get all subarrays of length equal to a power of 2 and compute the
 After precomputation, we answer the range queries in O(1) time by taking the biggest power of 2 that fits into the query range, getting the answer for it, and then offsetting that subarray to cover the elements that were missed. We then combine those two operations by taking advantage of the fact that the operation doesn't care that the segments are not disjoint.
 """
 
+# Implementation of a Sparse Table using Max operation
+# O(nlogn) time, O (nlogn) space to build
+# O(1) query
+import math
+class MaxSparseTable:
+    def __init__(self, arr):
+        N = len(arr)
+
+        levels = int(math.log(N , 2)) + 1
+
+        # build the sparse table
+        self.table = [[0]*N for _ in range(levels)]
+
+        # base case handle lengths of 1
+        for i in range(N):
+            self.table[0][i] = arr[i]
+
+        # handle all sizes
+        for power_of_2 in range(1,levels):
+            size = 1 << power_of_2
+            pos = 0
+            while pos + size - 1 < N:
+                offset = size >> 1
+                self.table[power_of_2][pos] = max(self.table[power_of_2 - 1][pos], self.table[power_of_2 - 1][pos + offset])
+                pos += 1
+    
+    def query(self, low, high):
+        length = high - low + 1
+
+        # find greatest power of two to fit in interval
+        max_size = int(math.log(length, 2))
+
+        return max(self.table[max_size][low],self.table[max_size][high - (1 << max_size) + 1])
+
+
+
+
+
 
