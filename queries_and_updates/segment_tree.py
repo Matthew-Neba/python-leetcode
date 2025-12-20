@@ -73,7 +73,6 @@ class SegmentTree:
         # case 1: interval of this node does not contain any value from query range
         if (node_low > query_high or node_high < query_low):
             return 0
-
         #case 2: interval of this node contains all values from range
         if (node_low >= query_low and  node_high <= query_high ):
             return self.tree[node]  
@@ -85,14 +84,67 @@ class SegmentTree:
         right_child_contribution = self.query(2*node + 1 , split_interval_point+ 1 , node_high, query_low, query_high)
         
         return left_child_contribution + right_child_contribution
-        
-
 
         
-
+# fully recursive segment tree:
+class SegmentTree2:
+    def __init__(self, arr):
+        N = len(arr)
         
+        # find nearest power of two >= n, (segment tree works on complete binary trees)
+        self.size = 1
+        while self.size < len(arr):
+            self.size *= 2
+        
+        # 0 is the identity for the sum operation
+        self.tree = [0] * (2 * self.size)
 
+        # build the leaf nodes
+        for i in range(N):
+            self.tree[self.size + i] = arr[i]
 
+        # build the rest of the tree
+        for i in range(self.size - 1, 0, -1):
+            self.tree[i] = self.tree[2*i] + self.tree[2*i + 1]
+        
+    def update(self, update_idx, val, cur_idx, node_l, node_r):
+        if update_idx <= node_l and update_idx >= node_r:
+            # update this node (base case)
+            self.tree[cur_idx] = val
+            return
 
+        # (idx is outside of the range of this node) current node is not affected
+        if update_idx < node_l or update_idx > node_r:
+            return
+        
+        # update children first
+        midpoint = (node_l + node_r) // 2
 
+        self.update(update_idx, val, cur_idx * 2, node_l, midpoint)
+        self.update(update_idx, val, cur_idx*2 + 1, midpoint + 1, node_r)
 
+        self.tree[cur_idx] = self.tree[cur_idx * 2] + self.tree[cur_idx*2 + 1]
+
+    def query(self,query_l, query_r, cur_idx, node_l, node_r):
+        # check if node fully contained in query
+        if query_l <= node_l and query_r >= node_r:
+            return self.tree[cur_idx]
+
+        # check if outside this node
+        if query_r < node_l or query_l > node_r:
+            return 0
+        
+        midpoint = (node_l + node_r) // 2
+        
+        left_contribute = self.query(query_l, query_r, cur_idx * 2, node_l, midpoint)
+        right_contribute = self.query(query_l, query_r, cur_idx*2 + 1, midpoint + 1, node_r)
+
+        return left_contribute + right_contribute
+
+    def query_public(self, query_l, query_r):
+        return self.query(query_l, query_r, 1, 0, self.size - 1)
+
+    def update_public(self, update_idx, val):
+        return self.update(update_idx, val, 1, 0 , self.size - 1)
+
+    
