@@ -86,7 +86,7 @@ class SegmentTree:
         return left_child_contribution + right_child_contribution
 
         
-# fully recursive segment tree:
+# almost fully recursive segment tree:
 class SegmentTree2:
     def __init__(self, arr):
         N = len(arr)
@@ -108,7 +108,7 @@ class SegmentTree2:
             self.tree[i] = self.tree[2*i] + self.tree[2*i + 1]
         
     def update(self, update_idx, val, cur_idx, node_l, node_r):
-        if update_idx <= node_l and update_idx >= node_r:
+        if node_l >= update_idx  and node_r <= update_idx:
             # update this node (base case)
             self.tree[cur_idx] = val
             return
@@ -127,7 +127,7 @@ class SegmentTree2:
 
     def query(self,query_l, query_r, cur_idx, node_l, node_r):
         # check if node fully contained in query
-        if query_l <= node_l and query_r >= node_r:
+        if node_l >= query_l and node_r <= query_r:
             return self.tree[cur_idx]
 
         # check if outside this node
@@ -148,3 +148,65 @@ class SegmentTree2:
         return self.update(update_idx, val, 1, 0 , self.size - 1)
 
     
+# fully recursive
+class Node:
+    def __init__(self, val = None):
+        self.sum = val
+    
+class SegmentTree3:
+    def __init__(self, arr):
+        self.N = len(arr)
+        
+        self.tree = [Node() for _ in range(4 * self.N)]
+        self.build(arr, 1, 0, self.N - 1)
+
+
+    def build(self, arr, idx, node_left, node_right):
+        if node_left == node_right:
+            self.tree[idx].sum = arr[node_left]
+            return
+        
+        mid = (node_left + node_right) // 2
+        self.build(arr, 2*idx, node_left, mid)
+        self.build(arr, 2*idx + 1, mid + 1, node_right)
+
+        self.tree[idx].sum = self.tree[2*idx].sum + self.tree[2*idx + 1].sum
+
+        
+    def update(self, update_idx, val, idx, node_l, node_r):
+        if node_l >= update_idx  and node_r <= update_idx:
+            self.tree[idx].sum = val
+            return
+
+        # (idx is outside of the range of this node) current node is not affected
+        if update_idx < node_l or update_idx > node_r:
+            return
+        
+        # update children first
+        mid = (node_l + node_r) // 2
+        self.update(update_idx, val, idx * 2, node_l, mid)
+        self.update(update_idx, val, idx*2 + 1, mid + 1, node_r)
+
+        self.tree[idx].sum = self.tree[idx * 2].sum + self.tree[idx*2 + 1].sum
+
+    def query(self, query_l, query_r, idx, node_l, node_r):
+        # check if node fully contained in query
+        if node_l >= query_l and node_r <= query_r:
+            return self.tree[idx].sum
+
+        # check if outside this node
+        if query_r < node_l or query_l > node_r:
+            return 0
+        
+        mid = (node_l + node_r) // 2
+    
+        left_contribute = self.query(query_l, query_r, idx * 2, node_l, mid)
+        right_contribute = self.query(query_l, query_r, idx * 2 + 1, mid + 1, node_r)
+
+        return left_contribute + right_contribute
+
+    def query_public(self, query_l, query_r):
+        return self.query(query_l, query_r, 1, 0, self.N - 1)
+
+    def update_public(self, update_idx, val):
+        return self.update(update_idx, val, 1, 0 , self.N - 1)
