@@ -17,7 +17,8 @@ class Solution:
         #      - It happens BEFORE the last print of a/b/c → a/b/c's print then overwrites it,
         #        contradicting that it was the last print for that character inside [xyx].
         #    This means the subproblems [xyx] and [xyxy] are fully contained and independent
-        #    of each other and of a, b, c.
+        #    of each other and of a, b, c.  We do something similar for burst ballons to make the subproblems
+        #    independent.
         #
         # 2) This allows us to reason about various combinations we can perform these last prints. We use 
         # a trick used in problems like combination sum to ensure we never have to look backwards as well
